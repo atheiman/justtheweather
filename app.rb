@@ -14,13 +14,12 @@ def send_api_get(url)
   return JSON.parse resp.body
 end
 
-def build_weather_url(endpoint, params_string)
-
-  return $weather_api_base_url + endpoint + '?' + params_string
-end
+# def build_weather_url(endpoint, params_string)
+#   return $weather_api_base_url + endpoint + '?' + params_string
+# end
 
 def build_current_weather_url(params_string)
-  return $weather_api_base_url + 'weather?' + params_string
+  return $weather_api_base_url + 'weather?units=imperial&' + params_string
 end
 
 
