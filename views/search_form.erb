@@ -1,0 +1,21 @@
+<script>
+function searchWeather() {
+  var searchValue = document.getElementById('searchInput').value;
+  console.log('searchValue:', searchValue);
+  if (/^\d{5}$/.test(searchValue))
+    location.assign('/zip/' + searchValue);
+  else
+    location.assign('/location/' + searchValue);
+  return false;
+}
+</script>
+
+<p><label for="searchInput">Search for weather or allow us to use your location:</label>
+<form onsubmit="return searchWeather()" class="form-inline">
+  <div class="form-group">
+    <input type="text" id="searchInput" placeholder="ZIP or Location" required
+           class="form-control"/>
+    <button class="btn btn-primary" type="submit">Search Weather</button>
+  </div>
+</form>
+</p>
